@@ -1,0 +1,20 @@
+apply plugin: "application"
+
+mainClassName = "my.Application"
+
+sourceCompatibility = 1.7 
+
+targetCompatibility = 1.7
+
+dependencies {
+    testCompile("junit:junit:4.12")
+}
+
+repositories {
+    jcenter()
+}
+
+task rebuild {
+    group "my"
+    dependsOn "clean", "assemble" 
+}
